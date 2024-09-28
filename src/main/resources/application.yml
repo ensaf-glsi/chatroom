@@ -1,3 +1,6 @@
+server:
+  port: 1010
+
 spring:
   application:
     name: chatroom
@@ -11,3 +14,14 @@ spring:
       ddl-auto: update
   h2:
     console.enabled: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+        orm.jdbc.bind: trace
+    com:
+      ensaf:
+        chatroom: DEBUG
+      zaxxer: WARN

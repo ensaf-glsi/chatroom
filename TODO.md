@@ -6,7 +6,7 @@
     - **Introduction** : Concepts de base des expressions lambda et de la programmation fonctionnelle en Java.
     - **Contenu** : Utilisation des lambdas, Streams API, Optional.
 
-3. [ ] **Maven**
+3. [x] **Introduction à Maven**
 
 4. [x] **Lombok**
     - **Introduction** : Simplification du code Java avec Lombok.
@@ -17,18 +17,20 @@
     - **Contenu** : Structures de données YAML, intégration avec Spring Boot.
 
 6. **JPA (H2, MySQL et PostgreSQL)**
-    - **Introduction** : ORM avec JPA.
+    - [x] **Introduction** : ORM avec JPA.
     - **Contenu** : Configuration des bases de données H2, MySQL et PostgreSQL, mapping d'entités.
 
-7. **Spring core**
+7. [x] **Spring core**
 
 8. **Liquibase**
     - **Introduction** : Gestion des migrations de base de données.
     - **Contenu** : Configuration de Liquibase, création de scripts de migration.
 
-9. **Logback**
+9. [x] **Logback**
     - **Introduction** : Importance de la journalisation.
     - **Contenu** : Configuration de Logback, niveaux de journalisation, appender.
+    - https://www.baeldung.com/spring-boot-logging
+    - https://www.baeldung.com/logback
 
 10. **Auditing + Envers**
      - **Introduction** : Traçabilité des modifications des entités.

@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.ensaf</groupId>
 	<artifactId>chatroom</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>chatroom</name>
 	<description>Chat Room</description>
 	<url/>
