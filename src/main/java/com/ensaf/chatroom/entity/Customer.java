@@ -6,7 +6,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Transient;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-import org.springframework.util.StringUtils;
 
 import java.time.LocalDate;
 
@@ -24,6 +23,7 @@ public class Customer {
     private Long id;
     private String firstName;
     private String lastName;
+    private Integer gender;
     private LocalDate birthDate;
     @Transient
     private Integer age;

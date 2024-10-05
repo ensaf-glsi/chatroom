@@ -2,13 +2,15 @@ package com.ensaf.chatroom.service;
 
 import com.ensaf.chatroom.dao.CustomerRepository;
 import com.ensaf.chatroom.entity.Customer;
+import com.ensaf.chatroom.exception.BadRequestException;
+import com.ensaf.chatroom.exception.NotFoundException;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.Optional;
@@ -33,11 +35,15 @@ public class CustomerService {
     }
 
     public Customer create(Customer customer) {
+        String firstName = customer.getFirstName();
+        if (!StringUtils.hasLength(firstName) || firstName.length() < 3) {
+            throw new BadRequestException("Le prénom doit contenir au mois 3 caracteres.");
+        }
         return customerRepository.save(customer);
     }
 
     public Customer getById(Long id) {
-        return findById(id).orElseThrow();
+        return findById(id).orElseThrow(NotFoundException::new);
     }
 
     public void update(Long id, Customer customer) {
