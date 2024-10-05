@@ -1,0 +1,92 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="v1/001-update-schema-001" author="zhanafi">
+        <createTable tableName="users">
+            <column name="id" type="varchar(36)">
+                <constraints primaryKey="true" primaryKeyName="pk_users" />
+            </column>
+            <column name="username" type="varchar(60)">
+                <constraints nullable="false" />
+            </column>
+            <column name="password" type="varchar(20)" />
+            <column name="email" type="varchar(60)">
+                <constraints nullable="false" />
+            </column>
+            <column name="firstname" type="varchar(40)" />
+            <column name="lastname" type="varchar(40)" />
+            <column name="birth_date" type="DATE" />
+            <column name="image" type="varchar(255)" />
+        </createTable>
+    </changeSet>
+
+    <changeSet id="v1/001-update-schema-002" author="zhanafi">
+        <createTable tableName="conversations">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="pk_conversations" />
+            </column>
+            <column name="name" type="varchar(40)" />
+            <column name="image" type="varchar(255)" />
+            <column name="group_chat" type="boolean" />
+        </createTable>
+    </changeSet>
+
+    <changeSet id="v1/001-update-schema-003" author="zhanafi">
+        <createTable tableName="conversation_memebers">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="pk_conversation_memebers" />
+            </column>
+            <column name="member_id" type="varchar(36)">
+                <constraints nullable="false" foreignKeyName="fk_conversation_memebers_member_id"
+                             referencedTableName="users" referencedColumnNames="id" />
+            </column>
+            <column name="conversation_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_conversation_memebers_conversation_id"
+                             referencedTableName="conversations" referencedColumnNames="id" />
+            </column>
+            <column name="member_type" type="varchar(20)" />
+            <column name="muted" type="boolean" />
+        </createTable>
+    </changeSet>
+
+    <changeSet id="v1/001-update-schema-004" author="zhanafi">
+        <createTable tableName="messages">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="pk_messages" />
+            </column>
+            <column name="conversation_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_messages_conversation_id"
+                             referencedTableName="conversations" referencedColumnNames="id" />
+            </column>
+            <column name="sender_id" type="varchar(36)">
+                <constraints nullable="false" foreignKeyName="fk_conversation_memebers_sender_id"
+                             referencedTableName="users" referencedColumnNames="id" />
+            </column>
+            <column name="sent_date" type="datetime" />
+            <column name="content" type="text" />
+        </createTable>
+    </changeSet>
+
+    <changeSet id="v1/001-update-schema-005" author="zhanafi">
+        <addColumn tableName="users">
+            <column name="phone" type="varchar(16)" />
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="v1/001-update-schema-006" author="zhanafi">
+<!--        <createIndex indexName="uq_idx_users_username" tableName="users" unique="true">-->
+<!--            <column name="username"/>-->
+<!--        </createIndex>-->
+        <sql>
+            CREATE UNIQUE INDEX uq_idx_users_username ON users (LOWER(username));
+        </sql>
+    </changeSet>
+
+    <changeSet id="v1/001-update-schema-007" author="zhanafi">
+        <sql>
+            CREATE UNIQUE INDEX uq_idx_users_email ON users (LOWER(email));
+        </sql>
+    </changeSet>
+</databaseChangeLog>

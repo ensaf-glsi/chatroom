@@ -13,13 +13,20 @@ spring:
     password: postgres
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
   h2:
     console.enabled: true
 
+  liquibase:
+    enabled: true
+#    change-log: db/changelog/db.changelog-master.yaml
+
 logging:
   level:
+    jakarta: debug
+
     org:
+      springframework: debug
       hibernate:
         SQL: debug
         orm.jdbc.bind: trace

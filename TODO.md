@@ -12,17 +12,19 @@
     - **Introduction** : Simplification du code Java avec Lombok.
     - **Contenu** : Annotations de base (e.g., `@Getter`, `@Setter`, `@Builder`).
 
-5. **YAML**
-    [x] - **Introduction** : Syntaxe et utilisation de YAML dans les configurations Spring.
-    - **Contenu** : Structures de données YAML, intégration avec Spring Boot.
+5. [x] **YAML**
+   - **Introduction** : Syntaxe et utilisation de YAML dans les configurations Spring.
+   - **Contenu** : Structures de données YAML, intégration avec Spring Boot.
 
 6. **JPA (H2, MySQL et PostgreSQL)**
     - [x] **Introduction** : ORM avec JPA.
     - **Contenu** : Configuration des bases de données H2, MySQL et PostgreSQL, mapping d'entités.
+    - **Mapping**
+    - [x] **repository**
 
 7. [x] **Spring core**
 
-8. **Liquibase**
+8. [x] **Liquibase**
     - **Introduction** : Gestion des migrations de base de données.
     - **Contenu** : Configuration de Liquibase, création de scripts de migration.
 
@@ -36,7 +38,7 @@
      - **Introduction** : Traçabilité des modifications des entités.
      - **Contenu** : Auditing avec Spring Data JPA, utilisation de Hibernate Envers.
 
-11. **Spring Web**
+11. [x] **Spring Web**
     - **Introduction** : Développement de services web avec Spring.
     - **Contenu** : Contrôleurs, services RESTful, gestion des requêtes HTTP.
 
@@ -48,7 +50,7 @@
     - **Introduction** : Pattern DTO et mapping d'objets.
     - **Contenu** : Utilisation de MapStruct, projections JPA.
 
-14. **Server/Client errors**
+14. [x] **Server/Client errors**
     - **Introduction** : Gestion centralisée des exceptions dans Spring Boot.
     - **Contenu** : `ResponseStatusException`, `@ControllerAdvice`, `@ExceptionHandler`.
 
