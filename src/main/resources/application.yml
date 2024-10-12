@@ -26,7 +26,7 @@ logging:
     jakarta: debug
 
     org:
-      springframework: debug
+#      springframework: debug
       hibernate:
         SQL: debug
         orm.jdbc.bind: trace

@@ -1,5 +1,6 @@
 package com.ensaf.chatroom.web;
 
+import com.ensaf.chatroom.dto.UserCriteria;
 import com.ensaf.chatroom.entity.User;
 import com.ensaf.chatroom.service.UserService;
 import jakarta.validation.Valid;
@@ -45,8 +46,8 @@ public class UserController {
     }
 
     @GetMapping
-    public List<User> findAll() {
-        return userService.findAll();
+    public List<User> findAll(UserCriteria criteria) {
+        return userService.findAll(criteria);
     }
 
 }

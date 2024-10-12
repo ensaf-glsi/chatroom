@@ -1,6 +1,8 @@
 package com.ensaf.chatroom.service;
 
 import com.ensaf.chatroom.dao.UserRepository;
+import com.ensaf.chatroom.dao.specification.UserSpecification;
+import com.ensaf.chatroom.dto.UserCriteria;
 import com.ensaf.chatroom.entity.User;
 import com.ensaf.chatroom.exception.BadRequestException;
 import com.ensaf.chatroom.exception.NotFoundException;
@@ -8,6 +10,7 @@ import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -69,9 +72,16 @@ public class UserService {
         return userRepository.findById(id);
     }
 
-    public List<User> findAll() {
+    public List<User> findAll(UserCriteria criteria) {
         log.trace("find all users");
-        return userRepository.findAll();
+        return userRepository.findAll(
+                Specification.allOf(
+                        UserSpecification.byFirstnameContaining(criteria.getFirstname()),
+                        UserSpecification.byLastnameContaining(criteria.getLastname())
+                )
+//                UserSpecification.byFirstnameContaining(criteria.getFirstname())
+//                        .and(UserSpecification.byLastnameContaining(criteria.getLastname()))
+        );
     }
 
 }

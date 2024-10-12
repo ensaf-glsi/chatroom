@@ -16,11 +16,12 @@
    - **Introduction** : Syntaxe et utilisation de YAML dans les configurations Spring.
    - **Contenu** : Structures de données YAML, intégration avec Spring Boot.
 
-6. **JPA (H2, MySQL et PostgreSQL)**
-    - [x] **Introduction** : ORM avec JPA.
+6. [x] **JPA (H2, MySQL et PostgreSQL)**
+    - **Introduction** : ORM avec JPA.
     - **Contenu** : Configuration des bases de données H2, MySQL et PostgreSQL, mapping d'entités.
     - **Mapping**
-    - [x] **repository**
+    - **repository**
+    - **specification**
 
 7. [x] **Spring core**
 
