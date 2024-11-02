@@ -1,5 +1,6 @@
 package com.ensaf.chatroom.entity;
 
+import com.ensaf.entity.NumericAuditable;
 import com.ensaf.entity.NumericPersistable;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -14,7 +15,7 @@ import lombok.experimental.SuperBuilder;
 @Getter @Setter
 @ToString
 @RequiredArgsConstructor
-public class Conversation extends NumericPersistable<Long> {
+public class Conversation extends NumericAuditable<Long> {
 
     @Column(length = 40)
     private String name; // Nom de la conversation (utilisé pour les groupes)
