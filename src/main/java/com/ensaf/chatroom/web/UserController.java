@@ -29,19 +29,19 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    public void update(@PathVariable("id") Long userId, @Valid @RequestBody User user) {
+    public void update(@PathVariable("id") String userId, @Valid @RequestBody User user) {
         userService.update(userId, user);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable String id) {
         userService.delete(id);
     }
 
     @GetMapping("/{id}")
     // <=> @RequestMapping(method = RequestMethod.GET, path = "/{id}")
-    public User findById(@PathVariable Long id) {
+    public User findById(@PathVariable String id) {
         return userService.getById(id);
     }
 

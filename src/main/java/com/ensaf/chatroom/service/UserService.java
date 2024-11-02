@@ -50,11 +50,11 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public User getById(Long id) {
+    public User getById(String id) {
         return findById(id).orElseThrow(NotFoundException::new);
     }
 
-    public void update(Long id, User user) {
+    public void update(String id, User user) {
         // controler unicité username
         // controler unicité email
         // chercher le client dans la bd,
@@ -64,11 +64,11 @@ public class UserService {
         userRepository.save(target);
     }
 
-    public void delete(Long id) {
+    public void delete(String id) {
         userRepository.delete(getById(id));
     }
 
-    public Optional<User> findById(Long id) {
+    public Optional<User> findById(String id) {
         return userRepository.findById(id);
     }
 
