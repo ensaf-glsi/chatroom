@@ -10,9 +10,11 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
+import org.hibernate.envers.Audited;
 
 import java.time.LocalDate;
 
+@Audited
 @Table(name = "users")
 @Entity
 @SuperBuilder

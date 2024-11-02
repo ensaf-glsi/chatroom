@@ -14,6 +14,14 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
+    properties:
+      org.hibernate:
+        # https://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#envers
+        envers:
+          use_revision_entity_with_native_id: true
+          audit_strategy: org.hibernate.envers.strategy.internal.ValidityAuditStrategy
+          audit_strategy_validity_store_revend_timestamp: true
+          audit_strategy_validity_revend_timestamp_field_name: revend_timestamp
   h2:
     console.enabled: true
 

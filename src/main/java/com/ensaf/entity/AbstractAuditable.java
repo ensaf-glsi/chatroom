@@ -10,6 +10,7 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.FieldNameConstants;
 import lombok.experimental.SuperBuilder;
+import org.hibernate.envers.NotAudited;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -33,25 +34,25 @@ import static com.ensaf.chatroom.utils.ColumnDefinition.USER_DEFAULT_SYSTEM;
 public abstract class AbstractAuditable<I extends Serializable> extends AbstractPersistable<I> {
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-//    @NotAudited
+    @NotAudited
     @Column(updatable = false, nullable = false, columnDefinition = TIMESTAMP_DEFAULT_NOW)
     @CreatedDate
     private LocalDateTime createdDate;
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-//    @NotAudited
+    @NotAudited
     @Column(updatable = false, nullable = false, columnDefinition = USER_DEFAULT_SYSTEM)
     @CreatedBy
     private String createdBy;
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-//    @NotAudited
+    @NotAudited
     @Column(nullable = false, columnDefinition = TIMESTAMP_DEFAULT_NOW)
     @LastModifiedDate
     private LocalDateTime lastModifiedDate;
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-//    @NotAudited
+    @NotAudited
     @Column(nullable = false, columnDefinition = USER_DEFAULT_SYSTEM)
     @LastModifiedBy
     private String lastModifiedBy;

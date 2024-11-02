@@ -1,4 +1,4 @@
-package com.ensaf.chatroom;
+package com.ensaf;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;

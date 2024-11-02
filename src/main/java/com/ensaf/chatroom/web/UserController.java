@@ -5,6 +5,7 @@ import com.ensaf.chatroom.entity.User;
 import com.ensaf.chatroom.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -50,4 +51,13 @@ public class UserController {
         return userService.findAll(criteria);
     }
 
+    @GetMapping("/{id}/revisions")
+    public Object findRevisions(@PathVariable String id, Pageable pageable) {
+        return userService.findRevisions(id, pageable);
+    }
+
+    @GetMapping("/{id}/revisions/{revision}")
+    public Object getRevision(@PathVariable String id, @PathVariable Long revision) {
+        return userService.findRevision(id, revision);
+    }
 }

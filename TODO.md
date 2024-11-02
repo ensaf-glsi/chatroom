@@ -35,7 +35,7 @@
     - https://www.baeldung.com/spring-boot-logging
     - https://www.baeldung.com/logback
 
-10. **Auditing + Envers**
+10. [x] **Auditing + Envers**
      - **Introduction** : Traçabilité des modifications des entités.
      - **Contenu** : Auditing avec Spring Data JPA, utilisation de Hibernate Envers.
 
@@ -43,7 +43,7 @@
     - **Introduction** : Développement de services web avec Spring.
     - **Contenu** : Contrôleurs, services RESTful, gestion des requêtes HTTP.
 
-12. **Swagger**
+12. [x] **Swagger**
     - **Introduction** : Documentation des API avec Swagger.
     - **Contenu** : Configuration de Swagger, génération de la documentation API.
 
