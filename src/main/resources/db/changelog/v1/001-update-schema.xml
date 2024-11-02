@@ -162,4 +162,14 @@
         </createTable>
         <addPrimaryKey columnNames="rev, id" constraintName="users_audPK" tableName="users_aud"/>
     </changeSet>
+    <changeSet id="v1/001-update-schema-012" author="zhanafi">
+        <createTable tableName="attachment">
+            <column name="id" type="VARCHAR(36)">
+                <constraints primaryKey="true" primaryKeyName="attachment_pk"/>
+            </column>
+            <column name="content_type" type="VARCHAR(200)"/>
+            <column name="size" type="BIGINT"/>
+            <column name="filename" type="VARCHAR(100)"/>
+        </createTable>
+    </changeSet>
 </databaseChangeLog>
