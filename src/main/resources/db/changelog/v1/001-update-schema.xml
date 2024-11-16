@@ -172,4 +172,31 @@
             <column name="filename" type="VARCHAR(100)"/>
         </createTable>
     </changeSet>
+
+    <changeSet id="v1/001-update-schema-013" author="zhanafi">
+        <addColumn tableName="users">
+            <column name="enabled" type="boolean" defaultValueBoolean="true">
+                <constraints nullable="false" />
+            </column>
+            <column name="account_non_expired" type="boolean" defaultValueBoolean="true">
+                <constraints nullable="false" />
+            </column>
+            <column name="account_non_locked" type="boolean" defaultValueBoolean="true">
+                <constraints nullable="false" />
+            </column>
+            <column name="credentials_non_expired" type="boolean" defaultValueBoolean="true">
+                <constraints nullable="false" />
+            </column>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="v1/001-update-schema-014" author="zhanafi">
+        <addColumn tableName="users_aud">
+            <column name="enabled" type="boolean" />
+            <column name="account_non_expired" type="boolean" />
+            <column name="account_non_locked" type="boolean" />
+            <column name="credentials_non_expired" type="boolean" />
+        </addColumn>
+    </changeSet>
+
 </databaseChangeLog>

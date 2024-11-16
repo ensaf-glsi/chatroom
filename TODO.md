@@ -55,7 +55,7 @@
     - **Introduction** : Gestion centralisée des exceptions dans Spring Boot.
     - **Contenu** : `ResponseStatusException`, `@ControllerAdvice`, `@ExceptionHandler`.
 
-15. **Upload / Download**
+15. [x] **Upload / Download**
     - **Introduction** : Manipulation de fichiers avec Spring Boot.
     - **Contenu** : Upload de fichiers, téléchargement de fichiers.
 

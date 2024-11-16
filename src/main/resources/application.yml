@@ -5,6 +5,10 @@ server:
     include-message: on_param
 
 spring:
+#  security:
+#    user:
+#      name: admin
+#      password: 1234
   servlet:
     multipart:
       max-file-size: 10MB
