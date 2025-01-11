@@ -44,6 +44,8 @@ public class UserService {
     }
 
     public User create(User user) {
+        // je dois creer un utilisateur dans keycloak
+        // recuperer l'id et l'utiliser dans ma bd comme externalId
         // controler unicité username
         checkUsername(user);
         // controler unicité email
