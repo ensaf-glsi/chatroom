@@ -1,61 +1,7 @@
-server:
-  port: 1010
-  error:
-    include-stacktrace: on_param
-    include-message: on_param
-
 spring:
-#  security:
-#    user:
-#      name: admin
-#      password: 1234
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: https://rbn-somalev-auth.innov-ds.com/realms/rbn-somalev.dev
-  servlet:
-    multipart:
-      max-file-size: 10MB
-      max-request-size: 20MB
   application:
     name: chatroom
-  datasource:
-#    url: jdbc:h2:mem:testdb
-    url: jdbc:postgresql://${DB_HOST:localhost}/${DB_NAME:chatroom}?${DB_PARAMS}
-    username: postgres
-    password: postgres
-  jpa:
-    hibernate:
-      ddl-auto: validate
-    properties:
-      org.hibernate:
-        # https://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#envers
-        envers:
-          use_revision_entity_with_native_id: true
-          audit_strategy: org.hibernate.envers.strategy.internal.ValidityAuditStrategy
-          audit_strategy_validity_store_revend_timestamp: true
-          audit_strategy_validity_revend_timestamp_field_name: revend_timestamp
-  h2:
-    console.enabled: true
-
-  liquibase:
-    enabled: true
-#    change-log: db/changelog/db.changelog-master.yaml
-
-logging:
-  level:
-    jakarta: debug
-
-    org:
-#      springframework: debug
-      hibernate:
-        SQL: debug
-        orm.jdbc.bind: trace
-    com:
-      ensaf:
-        chatroom: DEBUG
-      zaxxer: WARN
-
-storage:
-  location: uploads
+  config:
+    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888}/
+  profiles:
+    active: local,debug
