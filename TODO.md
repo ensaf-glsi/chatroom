@@ -1,8 +1,9 @@
-[x] 0. **Collections**
+[ ] 0. **Les géneriques**
+[ ] 0. **Collections**
     - **Introduction** : Importance des collections dans Java.
     - **Contenu** : Listes, ensembles, maps, et leurs utilisations.
 
-[x] 1. **Expression Lambda + Programmation fonctionnelle**
+[ ] 1. **Expression Lambda + Programmation fonctionnelle**
     - **Introduction** : Concepts de base des expressions lambda et de la programmation fonctionnelle en Java.
     - **Contenu** : Utilisation des lambdas, Streams API, Optional.
 
@@ -20,7 +21,7 @@
     - **Introduction** : Gestion des migrations de base de données.
     - **Contenu** : Configuration de Liquibase, création de scripts de migration.
 
-7. **JPA (H2, MySQL et PostgreSQL)**
+[x] 7. **JPA (H2, MySQL et PostgreSQL)**
     - **Introduction** : ORM avec JPA.
     - **Contenu** : Configuration des bases de données H2, MySQL et PostgreSQL, mapping d'entités.
 
